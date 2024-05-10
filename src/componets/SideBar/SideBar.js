@@ -2,6 +2,7 @@ import React,{ useState }  from 'react'
 import './SideBar.css'
 import SideBarData from './SideBarData'
 import { Link } from 'react-router-dom'
+import Header from '../Header/Header'
 
 function SideBar() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -11,9 +12,10 @@ function SideBar() {
   };
 
   return (
-    <div className="w-1/5 h-screen bg-transparent fixed rounded-r-lg">
-      <nav className="bg-gray-800 h-full">
-      <img src="assets/logo.png" alt="" className=" w-48 h-auto pl-4 pt-4" />
+    <>
+      <Header></Header>
+      <nav className="w-1/5 h-screen fixed  bg-slate-500 top-0">
+      <img src="assets/logo1.png" alt="" className=" w-52 h-auto pl-4 pt-4 pb-4" />
       <hr className="border-t border-gray-600 mb-4" />
         <ul className="flex flex-col">
           {SideBarData.map((item, index) => (
@@ -34,7 +36,7 @@ function SideBar() {
           ))}
         </ul>
       </nav>
-    </div>
+     </>
   );
 }
 
