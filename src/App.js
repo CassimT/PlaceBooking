@@ -6,6 +6,10 @@ import BookingPage from './pages/BookingPage';
 import ContactsPage from './pages/ContactsPage';
 import HomePage from './pages/HomePage';
 import PaymentsPage from './pages/PaymentsPage';
+import MakePaymentPage from './pages/MakePaymentPage';
+import SignupPage from './pages/SignupPage';
+import LoginPage from './pages/LoginPage';
+
 
 function App() {
   return (
@@ -18,8 +22,11 @@ function App() {
           <Route path="/PaymentsPage" element={<PaymentsPage/>} />
           <Route path="/ContactsPage" element={<ContactsPage/>} />
           <Route path="/AboutPage" element={<AboutPage/>} />
+          <Route path="/MakePaymentPage" element={<MakePaymentPage/>}/>
+          <Route path='/LoginPage' element={<LoginPage/>}/>
+          <Route path='/SignupPage' element={<SignupPage/>}/>
         </Routes>
-      </Router>
+      </Router>                                                             
     </div>
   );
 }

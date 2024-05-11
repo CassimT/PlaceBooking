@@ -1,11 +1,9 @@
 import React from 'react'
+import MakePayments from '../componets/MakePayments/MakePayments'
 
 function MakePaymentPage() {
   return (
-    <div>
-      <h1>MakePayments</h1>
-      
-    </div>
+    <MakePayments></MakePayments>
   )
 }
 

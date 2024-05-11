@@ -15,13 +15,13 @@ function SideBar() {
     <>
       <Header></Header>
       <nav className="w-1/5 h-screen fixed  bg-slate-500 top-0">
-      <img src="assets/logo1.png" alt="" className=" w-52 h-auto pl-4 pt-4 pb-4" />
+      <img src="assets/logo1.png" alt="" className=" w-52 h-auto pl-10  pt-8 pb-4" />
       <hr className="border-t border-gray-600 mb-4" />
         <ul className="flex flex-col">
           {SideBarData.map((item, index) => (
             <li
             key={index}
-            className={`h-12 flex items-center pl-4 ${
+            className={`h-12 flex items-center pl-10 ${
               index === activeIndex ? "bg-blue-500" : ""
             }`}           
             >
