@@ -36,7 +36,7 @@ function Header() {
   return (
     <>
     {/**main div */}
-    <div className=' w-screen h-20 bg-slate-100 shadow-md flex justify-end gap-36 py-6 items-center pr-10 sticky' >
+    <div className=' w-screen h-20 bg-slate-100 shadow-md flex justify-end gap-36 py-6 items-center pr-10 ' >
       {/**the SeaachBar */}
       <form action='' className=''>
         <input type='text' 
@@ -49,7 +49,7 @@ function Header() {
     
       </form> 
       {/**the Profile rapper */}
-      <div className='flex justify-center items-center gap-5'>
+      <div className='flex justify-center items-center gap-5 z-10'>
       <span className='relative pr-0 cursor-pointer'onClick={() => {setShowSignInPopup(!showSignInPopup)}} >SingIn</span>
       <img 
         ref={imgRef}
