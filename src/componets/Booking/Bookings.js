@@ -4,14 +4,19 @@ import HouseListData from './HouseListData'
 
 function Bookings() {
   return (
-    <div className=' flex flex-col'>
+
+    <div className=' items-center p-20'>
     {HouseListData.map((item,index) => {
      return (
-      <HouseList price ={item.price} name ={item.hostelName} imgPath ={item.imgPath} roomCapacity={item.roomCapacity} status={item.status} ></HouseList>
+      <div> 
+         <HouseList key = {index} price ={item.price} name ={item.hostelName} imgPath ={item.imgPath} roomCapacity={item.roomCapacity} status={item.status} ></HouseList>
+      </div>
+     
      ) 
     })}
       
     </div>
+
   )
 }
 

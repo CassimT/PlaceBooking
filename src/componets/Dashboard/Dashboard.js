@@ -2,7 +2,7 @@ import React from 'react'
 
 function Dashboard() {
   return (
-    <>
+    <div className=' items-center p-20'>
     <div className="container mx-auto px-4 w-full h-60 shadow-md rounded-3xl bg-slate-400">
       <div class="  grid grid-cols-2 gap-4 bg-slate-400 rounded-lg shadow-inner"> 
       <div class="p-4">
@@ -61,7 +61,7 @@ function Dashboard() {
         
    </div>
    </div>
-   </>
+   </div>
   )
 }
 

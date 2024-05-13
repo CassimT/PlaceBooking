@@ -1,32 +1,43 @@
 import React, { useEffect, useRef, useState } from 'react'
 import MenuData from './MenuData';
 import { Link } from 'react-router-dom';
+import SingIn from '../Authetication/SingIn';
+
 
 function Header() {
   const menu = ["Profile","SignIn","SignUp","LogOut"]
   const [open,setOpen] = useState(false);
+  const [showSignInPopup, setShowSignInPopup] = useState(false);
+  const [selectedItemIndex, setSelectedItemIndex] = useState(-1);
   const menuRef = useRef(null)
   const imgRef= useRef(null)
-
+  const popUpRef = useRef(null)
+ 
+  {/**useEffect to close the popup and the drop downmenu when one clicks outsdie it */}
   useEffect(()=> {
     const handleCLickOutside = (e) => {
       console.log("CLick Event")
-      if(menuRef.current && imgRef.current) {
-        if(!menuRef.current.contains(e.target) && !imgRef.current.contains(e.target)){
+      console.log("Click outside detected");
+      if(menuRef.current && imgRef.current ) {
+        if(!menuRef.current.contains(e.target) &&
+         !imgRef.current.contains(e.target)
+         ){
           setOpen(false)
+          setShowSignInPopup(false)
         }
       }
     };
     document.addEventListener("click",handleCLickOutside)
-    return (
-      document.removeEventListener("click", handleCLickOutside)
-    )
+    return () => {
+      document.removeEventListener("click",handleCLickOutside)
+    }   
   },[])
 
   return (
     <>
-    <div className=' w-screen h-20 bg-slate-100 shadow-md flex justify-end gap-36 py-6 items-center relative pr-10'>
-
+    {/**main div */}
+    <div className=' w-screen h-20 bg-slate-100 shadow-md flex justify-end gap-36 py-6 items-center pr-10 sticky' >
+      {/**the SeaachBar */}
       <form action='' className=''>
         <input type='text' 
         placeholder='Search'
@@ -37,9 +48,9 @@ function Header() {
         </input>
     
       </form> 
-
+      {/**the Profile rapper */}
       <div className='flex justify-center items-center gap-5'>
-      <span className='relative pr-0 cursor-pointer'>SingIn</span>
+      <span className='relative pr-0 cursor-pointer'onClick={() => {setShowSignInPopup(!showSignInPopup)}} >SingIn</span>
       <img 
         ref={imgRef}
         onClick={() => {setOpen(!open)}}
@@ -48,28 +59,42 @@ function Header() {
       </img>    
       </div>
     
+    {/**the dropDown Menu */}
       {open&&(
-        <div className=' absolute top-24'  ref={menuRef}>
-        <div className='w-40 h-40 bg-white shadow-lg absolute top-full right-0'>
+        <div className=' absolute top-24 z-10'>
+        <div className='w-40 h-40 bg-white shadow-2xl absolute top-full right-0'>
           <ul className='flex flex-col gap-2 '>
             {MenuData.map((item, index) => (
               <>
               <li 
                 ref={menuRef}
-                onClick={()=> {setOpen(false)}}
-                key={index} className='cursor-pointer hover:bg-slate-300'>
-                  <Link to={item.path}>
-                    <span>{item.title}</span>
-
-                  </Link>
+                
+                onClick={()=> {
+                  setOpen(false)
+                  setShowSignInPopup(false)
+                  setSelectedItemIndex(index)
+                }}
+                key={index} className='cursor-pointer hover:bg-slate-300 h-6 rounded-md'>                
+                    <span>{item.title}</span>                  
                 </li>
-              <hr/>
+                <hr></hr>
               </>
             ))}
           </ul>
         </div>
       </div>
-      )}    
+      )} 
+
+      {/**the popUpshow */}
+      {showSignInPopup &&(
+        <SingIn ref={popUpRef} ></SingIn>
+      )}
+
+      {/**showinh the popUp from the drop downmenu */}
+      {selectedItemIndex === 0 &&(
+        <SingIn ref={popUpRef} ></SingIn>
+      )}
+       
     </div>
    
     </>
