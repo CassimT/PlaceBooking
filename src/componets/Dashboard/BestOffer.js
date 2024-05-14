@@ -10,7 +10,7 @@ function BestOffer (props) {
          <div className=" container mx-sm px-4 w-70 h-60 shadow-md rounded-3xl bg-slate-400 p-4 place-content-center">
       <div className=" grid grid-cols-2 grid-row-2 gap-4 bg-slate-400 bg-blend-color  overflow-hidden"> 
       <div className="p-4">
-      <img src={props.imgPath} alt='' ></img>
+      <img className='rounded-2xl' src={props.imgPath} alt='' ></img>
         </div>
       <div>
         <div className="conatiner bg-slate-300 rounded-xl w-50">
