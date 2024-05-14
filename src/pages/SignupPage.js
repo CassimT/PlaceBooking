@@ -3,7 +3,7 @@ import SignUp from '../componets/Authetication/SignUp'
 
 function SignupPage() {
   return (
-    <div>
+    <div  className= ' container absolute right-0 top-20 items-center'>
         <SignUp></SignUp>
       
     </div>

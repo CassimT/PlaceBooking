@@ -3,7 +3,7 @@ import Dashboard from '../componets/Dashboard/Dashboard'
 
 function HomePage() {
   return (
-    <div className= "home" >
+    <div className= ' container absolute right-0 top-10 items-center p-5' >
         <Dashboard></Dashboard>
       
     </div>

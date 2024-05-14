@@ -3,7 +3,7 @@ import AboutUs from '../componets/About/AboutUs'
 
 function AboutPage() {
   return (
-    <div className="about">
+    <div className= ' container absolute right-0 top-20 items-center p-5' >
         <AboutUs></AboutUs>
           
     </div>
