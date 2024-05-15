@@ -10,6 +10,7 @@ function Bookings() {
      return (
       <div> 
          <HouseList key = {index} price ={item.price} name ={item.hostelName} imgPath ={item.imgPath} roomCapacity={item.roomCapacity} status={item.status} ></HouseList>
+         <hr className=''></hr>
       </div>
      
      ) 
