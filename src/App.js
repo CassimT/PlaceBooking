@@ -11,6 +11,7 @@ import LoginPage from './pages/LoginPage';
 import DetailsPage from './pages/DetailsPage';
 import SideBar from './componets/SideBar/SideBar';
 import ProfilePage from './pages/ProfilePage';
+import PrivateRouters from './componets/utills/PrivateRouters';
 
 function MainLayout() {
   const location = useLocation();
@@ -24,14 +25,16 @@ function MainLayout() {
     <div className="App">
       {!isAuthPage && <SideBar />}
       <Routes>
+        <Route element = {<PrivateRouters/>}>
+          <Route path="/MakePaymentPage" element={<MakePaymentPage />} />
+        </Route>
         <Route path="/" element={<HomePage />} />
         <Route path="/BookingPage" element={<BookingPage />} />
         <Route path="/PaymentsPage" element={<PaymentsPage />} />
         <Route path="/ContactsPage" element={<ContactsPage />} />
         <Route path="/AboutPage" element={<AboutPage />} />
-        <Route path="/MakePaymentPage" element={<MakePaymentPage />} />
-        <Route path="/LoginPage" element={<LoginPage />} />
         <Route path="/SignupPage" element={<SignupPage />} />
+        <Route path="/LoginPage" element={<LoginPage />} />
         <Route path="/DetailsPage" element={<DetailsPage />} />
         <Route path="/ProfilePage" element={<ProfilePage />} />
       </Routes>
