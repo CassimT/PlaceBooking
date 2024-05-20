@@ -3,9 +3,7 @@ import Profile from '../Profile/Profile'
 
 function SignUp() {
   return (
-    <div>SignUp
-
-    </div>
+    <div>  SignUp </div>
   )
 }
 

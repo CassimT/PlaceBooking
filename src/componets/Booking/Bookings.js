@@ -5,7 +5,7 @@ import HouseListData from './HouseListData'
 function Bookings() {
   return (
 
-    <div className=' items-center p-20'>
+    <div className=' items-center pl-20 pr-10 m-10'>
     {HouseListData.map((item,index) => {
      return (
       <div> 

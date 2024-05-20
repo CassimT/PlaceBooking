@@ -1,17 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react'
 import MenuData from './MenuData';
-import { Link } from 'react-router-dom';
+import { NavLink,Navigate,useNavigate } from 'react-router-dom';
 import SingIn from '../Authetication/SingIn';
 
 
 function Header() {
   const menu = ["Profile","SignIn","SignUp","LogOut"]
   const [open,setOpen] = useState(false);
-  const [showSignInPopup, setShowSignInPopup] = useState(false);
   const [selectedItemIndex, setSelectedItemIndex] = useState(-1);
   const menuRef = useRef(null)
   const imgRef= useRef(null)
-  const popUpRef = useRef(null)
+  const navigate = useNavigate();
  
   {/**useEffect to close the popup and the drop downmenu when one clicks outsdie it */}
   useEffect(()=> {
@@ -23,7 +22,6 @@ function Header() {
          !imgRef.current.contains(e.target)
          ){
           setOpen(false)
-          setShowSignInPopup(false)
         }
       }
     };
@@ -32,6 +30,18 @@ function Header() {
       document.removeEventListener("click",handleCLickOutside)
     }   
   },[])
+
+  const handleMenuItemClick = (index) => {
+    setOpen(false);
+    setSelectedItemIndex(index);
+    if (index === 0) {
+      navigate('/ProfilePage')
+    } else if(index === 1) {
+      navigate('/LoginPage'); 
+    } else if(index === 2) {
+      navigate('/SignupPage');  
+    }
+  };
 
   return (
     <>
@@ -50,15 +60,16 @@ function Header() {
       </form> 
       {/**the Profile rapper */}
       <div className='flex justify-center items-center gap-5 z-10'>
-      <span className='relative pr-0 cursor-pointer'onClick={() => {setShowSignInPopup(!showSignInPopup)}} >SingIn</span>
+        <NavLink to='/LoginPage'>
+          <span className='relative pr-0 cursor-pointer' >SingIn</span>
+        </NavLink>
       <img 
         ref={imgRef}
         onClick={() => {setOpen(!open)}}
         src='assets/avatas/avatar1.png' alt='' 
         className=' cursor-pointer w-14 h-14 object-cover border-4 border-gray-500 rounded-full  relative'>
       </img>    
-      </div>
-    
+      </div>   
     {/**the dropDown Menu */}
       {open&&(
         <div className=' absolute top-24 z-10'>
@@ -67,13 +78,8 @@ function Header() {
             {MenuData.map((item, index) => (
               <>
               <li 
-                ref={menuRef}
-                
-                onClick={()=> {
-                  setOpen(false)
-                  setShowSignInPopup(false)
-                  setSelectedItemIndex(index)
-                }}
+                ref={menuRef}               
+                onClick={() => handleMenuItemClick(index)}
                 key={index} className='cursor-pointer hover:bg-slate-300 h-6 rounded-md'>                
                     <span>{item.title}</span>                  
                 </li>
@@ -84,19 +90,7 @@ function Header() {
         </div>
       </div>
       )} 
-
-      {/**the popUpshow */}
-      {showSignInPopup &&(
-        <SingIn ref={popUpRef} ></SingIn>
-      )}
-
-      {/**showinh the popUp from the drop downmenu */}
-      {selectedItemIndex === 0 &&(
-        <SingIn ref={popUpRef} ></SingIn>
-      )}
-       
-    </div>
-   
+    </div>   
     </>
   )
 }
