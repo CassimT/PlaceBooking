@@ -1,20 +1,29 @@
-// ImageLink.js
-import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
+
 
 function ImageLink({ imgPath, name, price, roomCapacity, status }) {
+  const navigate = useNavigate();
+
+  function handleNavigations() {
+    navigate('/MakePaymentPage')
+
+  }
   return (
-    <div className="relative bg-slate-300 p-4 flex items-center border-gray-400 transition transform hover:scale-105 hover:shadow-lg w-full">
-      <Link to="/Details" className="flex-shrink-0">
-        <img src={imgPath} alt={name} className="w-24 h-16 md:w-32 md:h-24 cursor-pointer transition transform hover:scale-110" />
+    <div className='relative h-28 bg-slate-300 pt-2 flex items-center m-auto pl-10 pr-10 border-4 border-gray-400 rounded-lg p-4 bg-'>
+      <Link to='/DetailsPage' className='flex-shrink-0'>
+        <img src={imgPath} alt='' className='w-32 h-24 cursor-pointer' />
       </Link>
-      <div className="flex-grow flex flex-col md:flex-row justify-between items-start md:items-center pl-4 space-y-2 md:space-y-0">
-        <span className="bg-slate-300 p-2 md:p-4 lg:p-6 transition-colors duration-200 hover:bg-slate-400">{name}</span>
-        <h1 className="bg-slate-300 p-2 md:p-4 lg:p-6 transition-colors duration-200 hover:bg-slate-400">{price}</h1>
-        <h1 className="bg-slate-300 p-2 md:p-4 lg:p-6 transition-colors duration-200 hover:bg-slate-400">{roomCapacity}</h1>
-        <h1 className="bg-slate-300 p-2 md:p-4 lg:p-6 transition-colors duration-200 hover:bg-slate-400">{status}</h1>
-        <button className="bg-blue-600 rounded-full text-white h-8 w-16 md:w-20 font-serif transition-colors duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-          Book Now
+      <div className='flex-grow flex justify-between items-center pl-10'>
+        <span className="bg-slate-300 p-6 rounded-full shadow-md">{name}</span>
+        <h1 className="bg-slate-300 p-6 rounded-full shadow-md">{price}</h1>
+        <h1 className="bg-slate-300 p-6 rounded-full shadow-md">{roomCapacity}</h1>
+        <h1 className='pr-10 bg-slate-300 p-6 rounded-full shadow-md'>{status}</h1>
+        
+        <button className='button bg-blue-600 rounded-full text-white h-8 w-20 font-serif'
+        onClick={handleNavigations}
+        
+        
+        >book      
         </button>
       </div>
     </div>

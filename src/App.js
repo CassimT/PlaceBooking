@@ -16,7 +16,9 @@ function MainLayout() {
   const location = useLocation();
   const isAuthPage = location.pathname === '/LoginPage' || 
   location.pathname === '/SignupPage' ||
-  location.pathname === '/ProfilePage';
+  location.pathname === '/ProfilePage'||
+  location.pathname === '/MakePaymentPage'||
+  location.pathname === '/DetailsPage';
 
   return (
     <div className="App">
@@ -30,7 +32,7 @@ function MainLayout() {
         <Route path="/MakePaymentPage" element={<MakePaymentPage />} />
         <Route path="/LoginPage" element={<LoginPage />} />
         <Route path="/SignupPage" element={<SignupPage />} />
-        <Route path="/Details" element={<DetailsPage />} />
+        <Route path="/DetailsPage" element={<DetailsPage />} />
         <Route path="/ProfilePage" element={<ProfilePage />} />
       </Routes>
     </div>
