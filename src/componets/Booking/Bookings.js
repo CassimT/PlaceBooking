@@ -1,6 +1,6 @@
 import React from 'react'
 import HouseList from './HouseList'
-import HouseListData from './HouseListData'
+import HouseListData from './HouseListData copy'
 
 function Bookings() {
   return (
