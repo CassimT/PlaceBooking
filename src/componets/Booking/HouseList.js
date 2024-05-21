@@ -9,7 +9,7 @@ function HouseList(props) {
         {   
             name: 'Image',
             selector: 'imgPath',
-            cell: row => <img src={row.imgPath} alt="House" className="w-24" />
+            cell: row => <img src={row.imgPath} alt="House" className="w-24 cursor-pointer" />
         },
         { 
             name: 'Hostel Name',
@@ -49,11 +49,11 @@ function HouseList(props) {
     ];
 
     function goTo(props) {
-        navigate(`/BookingSectionPage`, { state: { House: props } });
+        navigate(`/MakePaymentPage`, { state: { House: props } });
     }
 
     return (
-        <div className='flex flex-col justify-between justify-items-center '>
+        <div className='flex flex-col justify-between justify-items-center w-11/12 m-auto '>
             <DataTable
                 columns={columns}
                 data={HouseListData} 
