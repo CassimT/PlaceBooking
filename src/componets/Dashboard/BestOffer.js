@@ -3,14 +3,14 @@ import React from 'react'
 function BestOffer (props) {
   return (
     
-    <>    
-   
-    <div className= "grid items-end p-4">
+    <div className='items-center px-2'>    
+    
 
-         <div className=" container mx-sm px-4 w-70 h-60 shadow-md rounded-3xl bg-slate-400 p-4 place-content-center">
-      <div className=" grid grid-cols-2 grid-row-2 gap-4 bg-slate-400 bg-blend-color  overflow-hidden"> 
-      <div className="p-4">
-      <img className='rounded-2xl' src={props.imgPath} alt='' ></img>
+<div className=" container px-4 w-4/5 h-60 shadow-md rounded-3xl bg-slate-400 p-3 place-items-center">
+      <div></div>
+      <div className=" grid grid-cols-2 gap-4 bg-slate-400 bg-blend-color place-items-center"> 
+      <div className="p-1">
+      <img className='rounded-2xl' src={props.imgPath} alt='' />
         </div>
       <div>
         <div className="conatiner bg-slate-300 rounded-xl w-50">
@@ -25,10 +25,8 @@ function BestOffer (props) {
         </div>
         </div>     
         </div>
-        </div>
         
-        
-      </>
+      </div>
       
  )
 }
