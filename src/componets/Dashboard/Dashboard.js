@@ -4,11 +4,11 @@ import BestOfferData from './BestOfferData'
 
 function Dashboard() {
   return (
-<div className='items-center p-20'>
-    <div className="grid grid-cols-3 gap-2 p-8">
+<>
+<div className="grid grid-cols-3 gap-2 p-8 items-start">
 <div></div>
 
-    <div className="container mx-auto px-4 w-90 h-60 shadow-2xl rounded-3xl bg-slate-400 col-span-3">
+<div className="container mx-auto px-4 w-90 h-60 shadow-2xl rounded-3xl bg-slate-400 col-span-2">
       <div className="p-4">
         <h3 className="text-3xl font-semibold">Best Offer</h3>
       
@@ -17,19 +17,22 @@ function Dashboard() {
           <div className="text-sm">LOCATION</div>
           <div className="text-sm">LOCATION</div>
         </div>
-        
-    </div>
+          </div>  
     </div>
     
-    <div className='grid grid-cols-2'>
+    <div className="grid grid-cols-2 gap-10 place-items-start p-4">
     {BestOfferData.map((item,index)=>{
       return( 
+        
         <BestOffer imgPath ={item.imgPath} name={item.name} price={item.price} location={item.location}></BestOffer>
+      
       )
       
     })}
-   </div>
-   </div>
+    </div>
+  
+   
+   </>
   )
 }
 
