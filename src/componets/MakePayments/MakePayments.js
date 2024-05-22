@@ -30,7 +30,7 @@ function MakePayments() {
           name="paymentMethod"                                                                                                                                 
           value={paymentDetails.paymentMethod}
           onChange={handleChange}
-          className="mt-2 block w-full p-2 rounded-md"
+          className="mt-2 block w-full p-2 border border-gray-300 rounded-md"
         >               
           <option value="">Select Payment Method</option>
           <option value="payChangu">Pay Changu</option>
@@ -50,7 +50,7 @@ function MakePayments() {
             value={paymentDetails.cardNumber}
             onChange={handleChange}
             required
-            className="mt-2 block w-full p-2 border rounded-md"
+            className="mt-2 block w-full p-2 border border-gray-300 rounded-md"
             placeholder="Enter Card Number"
           />
         </div>
@@ -77,11 +77,11 @@ function MakePayments() {
         </button>
       </form>
     </div>
-    <div className="mt-8 bg-gray-200 p-3 rounded-lg flex flex-col h-150 w-1/2 items-center justify-between">
+    <div className="mt-8 bg-gray-200 p-3 rounded-lg flex flex-col w-1/2 items-center justify-between">
       <img
         src="assets/houses/house16.jpg"
         alt="Namadidi Hostel"
-        className="h-24 w-24 rounded-lg mr-4"
+        className="h-24 w-24 rounded-full mr-4"
       />
       <div>
         <h3 className="font-semibold">Namadidi Hostel</h3>
@@ -92,8 +92,8 @@ function MakePayments() {
       </div>
       <button className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition duration-200">
         Make Payment
-      
-              </button>
+      </button>
+
             </div>
 
         </div>
