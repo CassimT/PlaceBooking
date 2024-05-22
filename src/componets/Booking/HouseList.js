@@ -9,7 +9,7 @@ function HouseList(props) {
         {   
             name: 'Image',
             selector: 'imgPath',
-            cell: row => <img src={row.imgPath} alt="House" className="w-24 cursor-pointer" />
+            cell: row => <img onClick={() => gotDetails(row)} src={row.imgPath} alt="House" className="w-24 cursor-pointer" />
         },
         { 
             name: 'Hostel Name',
@@ -50,6 +50,9 @@ function HouseList(props) {
 
     function goTo(props) {
         navigate(`/MakePaymentPage`, { state: { House: props } });
+    }
+    function gotDetails(props) {
+        navigate(`/DetailsPage`,{ state: { House: props } })
     }
 
     return (
