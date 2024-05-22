@@ -13,7 +13,8 @@ function AboutUs(props) {
 
       <main>
 
-        <p className="text-2xl font-light text-gray-800 mb-4">The future is written<br /> with us</p>
+        <p className="text-md font-light text-gray-800 mb-4 -m-1">The future is written</p>
+        <p>with us</p>
 
         <section className="bg-white p-6 mb-8 w-1/2 m-auto shadow-md shadow-red-500 rounded-3xl">
           <div className="flex justify-center items-center h-64">
@@ -35,7 +36,7 @@ function AboutUs(props) {
       </main>
 
 
-      <div className="grid grid-cols-3 gap-1 w-1/2 m-auto">
+      <div className="grid grid-cols-4 gap-1 w-1/2 m-auto">
         {AboutDataList.map((item, index) => (
           <AboutList
             key={index}
