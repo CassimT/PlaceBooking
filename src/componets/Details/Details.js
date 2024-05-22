@@ -1,53 +1,40 @@
-
 // src/components/RoomDetails.js
 import React from 'react';
 
-const RoomDetails = ({ room }) => {
+function RoomDetails() {
   return (
-    <div className="w-full max-w-md h-auto fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-6 border border-gray-300 z-10 rounded-md shadow-2xl">
-      <div className="flex justify-center items-center h-screen bg-gray-100">
-        <div className="bg-white p-8 rounded-lg shadow-lg max-w-lg w-full">
-          <h1 className="text-3xl font-bold mb-6">Room details</h1>
-          <div className="relative">
-            <img
-              src={room.image}
-              alt="Room"
-              className="w-full h-64 object-cover rounded-lg mb-4"
-            />
-          </div>
-          <h2 className="text-xl font-semibold mb-2">{room.hostelName}</h2>
-          <p className="text-gray-700 mb-2"><strong>Landlord:</strong> {room.landlord}</p>
-          <p className="text-gray-700 mb-2"><strong>Phone Number:</strong> {room.phoneNumber}</p>
-          <p className="text-gray-700 mb-2"><strong>Room Capacity:</strong> {room.capacity}</p>
-          <p className="text-gray-700 mb-2"><strong>Price:</strong> {room.price}</p>
-          <p className="text-gray-700 mb-4"><strong>Status:</strong> {room.status}</p>
-          <div className="flex items-center mb-4">
-            <div className="text-red-600">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17.657 16.657L13.414 12l4.243-4.243a6 6 0 10-8.485 8.485L12 17.657l4.243-4.243z"
-                />
+
+    <div className="w-10/12 h-auto fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-100 p-6 border border-gray-300 z-10 rounded-md shadow-2xl">
+    <div className='flex flex-col items-center bg-slate w-full min-h-screen p-8'>
+      <h1 className='text-4xl font-bold mb-8 text-center'>Room Details</h1>
+        
+      <div className='relative bg-white w-full max-w-4xl overflow-hidden rounded-lg shadow-lg'>
+        <img src='assets/houses/house8.jpg' alt='Room' className='w-full h-full object-cover' />
+      </div>
+
+      <div className='text-center mt-8'>
+        <h2 className='text-2xl font-semibold'>Bills and water inclusive</h2>
+      </div>
+
+      <div className='text-center mt-4'>
+        <div className='flex flex-col items-center'>
+          <div className='flex items-center space-x-2'>
+            <span className='text-red-500'>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className='w-6 h-6'>
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2a10 10 0 0110 10v5a10 10 0 01-10 10A10 10 0 012 17v-5A10 10 0 0112 2z" />
               </svg>
-            </div>
-            <span className="ml-2 text-gray-600">{room.location}</span>
+            </span>
+            <span className='text-lg font-medium'>Chikanda west</span>
           </div>
-          <button className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 transition duration-300">
-            Contact
-          </button>
+          <div className='mt-2 text-gray-600'>
+            <p>Near SDA Church</p>
+            <p>2 km from the school campus</p>
+          </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
 
-
-export default RoomDetails
+export default RoomDetails;
