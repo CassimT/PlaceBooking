@@ -21,12 +21,12 @@ function HouseList(props) {
             name: 'Price',
             selector: row => row.price,
             sortable: true,
-            cell: row => <div className="text-gray-800">${row.price}</div>,
+            cell: row => <div className="text-gray-800">{row.price}</div>,
         },
         { 
             name: 'Status',
             selector: row => row.status,
-            cell: row => <div className={`text-sm ${row.status === 'Available' ? 'text-green-600' : 'text-red-600'}`}>{row.status}</div>,
+            cell: row => <div className={`text-sm {row.status === 'Available' ? 'text-green-600' : 'text-red-600'}`}>{row.status}</div>,
         },
         { 
             name: 'Room Capacity',
@@ -67,20 +67,20 @@ function HouseList(props) {
                 customStyles={{
                     headRow: {
                         style: {
-                            backgroundColor: 'rgba(243, 244, 246, 1)', // Tailwind's gray-100
+                            backgroundColor: 'rgba(243, 244, 246, 1)', 
                         },
                     },
                     rows: {
                         style: {
                             minHeight: '48px',
                             '&:nth-of-type(odd)': {
-                                backgroundColor: 'rgba(249, 250, 251, 1)', // Tailwind's gray-50
+                                backgroundColor: 'rgba(249, 250, 251, 1)', 
                             },
                         },
                     },
                     pagination: {
                         style: {
-                            backgroundColor: 'rgba(243, 244, 246, 1)', // Tailwind's gray-100
+                            backgroundColor: 'rgba(243, 244, 246, 1)', 
                         },
                     },
                 }}
