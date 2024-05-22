@@ -1,24 +1,92 @@
-// ImageLink.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import DataTable from 'react-data-table-component';
+import HouseListData from '../../data/HouseListData';
 
-function ImageLink({ imgPath, name, price, roomCapacity, status }) {
-  return (
-    <div className="relative bg-slate-300 p-4 flex items-center border-gray-400 transition transform hover:scale-105 hover:shadow-lg w-full">
-      <Link to="/Details" className="flex-shrink-0">
-        <img src={imgPath} alt={name} className="w-24 h-16 md:w-32 md:h-24 cursor-pointer transition transform hover:scale-110" />
-      </Link>
-      <div className="flex-grow flex flex-col md:flex-row justify-between items-start md:items-center pl-4 space-y-2 md:space-y-0">
-        <span className="bg-slate-300 p-2 md:p-4 lg:p-6 transition-colors duration-200 hover:bg-slate-400">{name}</span>
-        <h1 className="bg-slate-300 p-2 md:p-4 lg:p-6 transition-colors duration-200 hover:bg-slate-400">{price}</h1>
-        <h1 className="bg-slate-300 p-2 md:p-4 lg:p-6 transition-colors duration-200 hover:bg-slate-400">{roomCapacity}</h1>
-        <h1 className="bg-slate-300 p-2 md:p-4 lg:p-6 transition-colors duration-200 hover:bg-slate-400">{status}</h1>
-        <button className="bg-blue-600 rounded-full text-white h-8 w-16 md:w-20 font-serif transition-colors duration-200 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">
-          Book Now
-        </button>
-      </div>
-    </div>
-  );
+function HouseList(props) {
+    const navigate = useNavigate();
+    const columns = [
+        {   
+            name: 'Image',
+            selector: 'imgPath',
+            cell: row => <img onClick={() => gotDetails(row)} src={row.imgPath} alt="House" className="w-24 cursor-pointer" />
+        },
+        { 
+            name: 'Hostel Name',
+            selector: row => row.hostelName,
+            sortable: true,
+            cell: row => <div className="text-gray-800">{row.hostelName}</div>,
+        },
+        { 
+            name: 'Price',
+            selector: row => row.price,
+            sortable: true,
+            cell: row => <div className="text-gray-800">{row.price}</div>,
+        },
+        { 
+            name: 'Status',
+            selector: row => row.status,
+            cell: row => <div className={`text-sm {row.status === 'Available' ? 'text-green-600' : 'text-red-600'}`}>{row.status}</div>,
+        },
+        { 
+            name: 'Room Capacity',
+            selector: row => row.roomCapacity,
+            sortable: true,
+            cell: row => <div className="text-gray-800">{row.roomCapacity}</div>,
+        },
+        {  
+            name: 'Actions',
+            button: true,
+            cell: row => (
+                <button 
+                    className='bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white rounded-md py-2 px-4'
+                    onClick={() => goTo(row)}
+                >
+                    Book
+                </button>
+            ),
+        }
+    ];
+
+    function goTo(props) {
+        navigate(`/MakePaymentPage`, { state: { House: props } });
+    }
+    function gotDetails(props) {
+        navigate(`/DetailsPage`,{ state: { House: props } })
+    }
+
+    return (
+        <div className='flex flex-col justify-between justify-items-center w-11/12 m-auto '>
+            <DataTable
+                columns={columns}
+                data={HouseListData} 
+                fixedHeader
+                pagination
+                selectableRows
+                className="border border-gray-300 rounded-lg shadow-md"
+                customStyles={{
+                    headRow: {
+                        style: {
+                            backgroundColor: 'rgba(243, 244, 246, 1)', 
+                        },
+                    },
+                    rows: {
+                        style: {
+                            minHeight: '48px',
+                            '&:nth-of-type(odd)': {
+                                backgroundColor: 'rgba(249, 250, 251, 1)', 
+                            },
+                        },
+                    },
+                    pagination: {
+                        style: {
+                            backgroundColor: 'rgba(243, 244, 246, 1)', 
+                        },
+                    },
+                }}
+            />
+        </div>
+    );
 }
 
-export default ImageLink;
+export default HouseList;

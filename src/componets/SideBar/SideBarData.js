@@ -26,12 +26,6 @@ const SideBarData = [
     path:"/AboutPage",
     cname: "nav-text"
 },
-{
-    title: "MakePayments",
-    path:"/MakePaymentPage",
-    cname: "nav-text"
-},
-
 
 ]
 

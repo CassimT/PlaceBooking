@@ -3,10 +3,11 @@ import React, { useState } from 'react';
 const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [rememberMe, setRememberMe] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Signing in with:', email, password);
+    console.log('Signing in with:', { email, password, rememberMe });
   };
 
   return (
@@ -45,6 +46,18 @@ const SignIn = () => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
+          </div>
+          <div className="mb-4">
+            <label className="inline-flex items-center">
+              <input
+                type="checkbox"
+                name="rememberMe"
+                checked={rememberMe}
+                onChange={(e) => setRememberMe(e.target.checked)}
+                className="form-checkbox"
+              />
+              <span className="ml-2">Remember Me</span>
+            </label>
           </div>
           <div className="flex items-center justify-between">
             <button
