@@ -1,5 +1,4 @@
 import React,{ useState }  from 'react'
-import './SideBar.css'
 import SideBarData from './SideBarData'
 import { Link } from 'react-router-dom'
 import Header from '../Header/Header'
