@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const SignIn = () => {
+const SignIn = ({ setAuthToken }) => {
+  const navigate = useNavigate()
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Signing in with:', { email, password, rememberMe });
+    setAuthToken(true);
+    navigate('/MakePaymentPage');
   };
 
   return (
@@ -63,6 +68,7 @@ const SignIn = () => {
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
+              onClick={handleSubmit}
             >
               Sign In
             </button>

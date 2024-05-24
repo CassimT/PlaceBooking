@@ -14,7 +14,14 @@ function RoomDetails() {
       <h1 className='text-4xl font-bold mb-8 text-left'>Room Details</h1>
         
       <div className='relative bg-white w-full max-w-4xl overflow-hidden rounded-3xl shadow-md'>
-        <img src={House.imgPath} alt='Room' className='w-full h-full object-cover' />
+      {
+            filsterdHouse.map((item, index) => {
+              return (
+                <img key={index} src={item.roomPath} alt='Room' className='w-full h-96 object-cover' />
+              )
+            })
+           }
+       
       </div>
 
       <div className='text-center mt-8'>
@@ -39,7 +46,7 @@ function RoomDetails() {
               return (
                 <>
                 <p>Near SDA Church</p>
-                <p> {item.distance} from the school campus</p>
+                <p> key = {index} {item.distance} from the school campus</p>
                 </>
               )
             })
