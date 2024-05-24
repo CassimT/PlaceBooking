@@ -2,8 +2,17 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import DataTable from 'react-data-table-component';
 import HouseListData from '../../data/HouseListData';
+import { useState } from 'react';
 
 function HouseList(props) {
+    const [records,setRecord] = useState(HouseListData)
+    const handleFilter = (event)=> {
+        const newData = HouseListData.filter(row => {
+            return row.hostelName.toLowerCase().includes(event.target.value.toLowerCase());
+        })
+        setRecord(newData)
+    }
+
     const navigate = useNavigate();
     const columns = [
         {   
@@ -56,10 +65,18 @@ function HouseList(props) {
     }
 
     return (
-        <div className='flex flex-col justify-between justify-items-center w-11/12 m-auto '>
+        <div className='flex flex-col justify-between justify-items-center w-11/12 m-auto gap-3'>
+        <input type='text' 
+            placeholder='Search'
+            name='search'
+            aria-label='Search'
+            className=' w-80 px-3 py-2 focus:outline-none placeholder-gray-500 text-black rounded-md border-non ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2'
+            onChange={handleFilter}
+        >
+        </input>
             <DataTable
                 columns={columns}
-                data={HouseListData} 
+                data={records} 
                 fixedHeader
                 pagination
                 selectableRows

@@ -1,6 +1,7 @@
 const HouseListData = [
     {
       imgPath: "assets/houses/house1.jpeg",
+      roomPath: "assets/rooms/room(30).jpg",
       hostelName: "Kamuzu Hostel",
       price: "K56,000.00",
       status: "Available",
@@ -13,6 +14,7 @@ const HouseListData = [
     },
     {
       imgPath: "assets/houses/house2.jpeg",
+      roomPath: "assets/rooms/room(29).jpg",
       hostelName: "CrossRoads Hostel",
       price: "K89,000.00",
       status: "Available",
@@ -26,6 +28,7 @@ const HouseListData = [
     },
     {
       imgPath: "assets/houses/house3.jpg",
+      roomPath: "assets/rooms/room(28).jpg",
       hostelName: "Chancellor Hostel",
       price: "K75,000.00",
       status: "Available",
@@ -39,6 +42,7 @@ const HouseListData = [
     },
     {
       imgPath: "assets/houses/house4.jpg",
+      roomPath: "assets/rooms/room(27).jpg",
       hostelName: "Victory Hostel",
       price: "K85,000.00",
       status: "Available",
@@ -52,6 +56,7 @@ const HouseListData = [
     },
     {
       imgPath: "assets/houses/house5.jpg",
+      roomPath: "assets/rooms/room(26).jpg",
       hostelName: "Eden Hostel",
       price: "K90,000.00",
       status: "Available",
@@ -65,6 +70,7 @@ const HouseListData = [
     },
     {
       imgPath: "assets/houses/house6.jpg",
+      roomPath: "assets/rooms/room(25).jpg",
       hostelName: "Sunset Hostel",
       price: "K80,000.00",
       status: "Available",
@@ -79,6 +85,7 @@ const HouseListData = [
     },
     {
       imgPath: "assets/houses/house7.jpg",
+      roomPath: "assets/rooms/room(24).jpg",
       hostelName: "Horizon Hostel",
       price: "K95,000.00",
       status: "Available",
@@ -93,6 +100,7 @@ const HouseListData = [
     },
     {
       imgPath: "assets/houses/house8.jpg",
+      roomPath: "assets/rooms/room(23).jpg",
       hostelName: "Serenity Hostel",
       price: "K70,000.00",
       status: "Available",
@@ -106,6 +114,7 @@ const HouseListData = [
     },
     {
       imgPath: "assets/houses/house9.jpg",
+      roomPath: "assets/rooms/room(22).jpg",
       hostelName: "Freedom Hostel",
       price: "K60,000.00",
       status: "Available",
@@ -119,6 +128,7 @@ const HouseListData = [
     },
     {
       imgPath: "assets/houses/house10.jpg",
+      roomPath: "assets/rooms/room(21).jpg",
       hostelName: "Peace Hostel",
       price: "K88,000.00",
       status: "Available",
@@ -132,6 +142,7 @@ const HouseListData = [
     },
     {
       imgPath: "assets/houses/house11.jpg",
+      roomPath: "assets/rooms/room(20).jpg",
       hostelName: "Pioneer Hostel",
       price: "K77,000.00",
       status: "Available",
@@ -145,6 +156,7 @@ const HouseListData = [
     },
     {
       imgPath: "assets/houses/house12.jpg",
+      roomPath: "assets/rooms/room(19).jpg",
       hostelName: "Bright Future Hostel",
       price: "K82,000.00",
       status: "Available",
@@ -158,6 +170,7 @@ const HouseListData = [
     },
     {
       imgPath: "assets/houses/house13.jpg",
+      roomPath: "assets/rooms/room(18).jpg",
       hostelName: "Star Hostel",
       price: "K65,000.00",
       status: "Available",
@@ -171,6 +184,7 @@ const HouseListData = [
     },
     {
       imgPath: "assets/houses/house14.jpg",
+      roomPath: "assets/rooms/room(17).jpg",
       hostelName: "Greenfield Hostel",
       price: "K93,000.00",
       status: "Available",
@@ -184,6 +198,7 @@ const HouseListData = [
     },
     {
       imgPath: "assets/houses/house15.jpg",
+      roomPath: "assets/rooms/room(16).jpg",
       hostelName: "Bright Future Hostel",
       price: "K82,000.00",
       status: "Available",
@@ -196,6 +211,7 @@ const HouseListData = [
 
     {
       imgPath: "assets/houses/house16.jpg",
+      roomPath: "assets/rooms/room(15).jpg",
       hostelName: "Chikowi",
       price: "K80,000.00",
       status: "Available",
@@ -208,6 +224,7 @@ const HouseListData = [
 
     {
       imgPath: "assets/houses/house17.jpg",
+      roomPath: "assets/rooms/room(14).jpg",
       hostelName: "Bright Future Hostel",
       price: "K90,000.00",
       status: "Available",
@@ -220,6 +237,7 @@ const HouseListData = [
 
     {
       imgPath: "assets/houses/house18.jpg",
+      roomPath: "assets/rooms/room(13).jpg",
       hostelName: "Bright Future Hostel",
       price: "K95,000.00",
       status: "Available",
@@ -232,6 +250,7 @@ const HouseListData = [
 
     {
       imgPath: "assets/houses/house19.jpg",
+      roomPath: "assets/rooms/room(12).jpg",
       hostelName: "Bright Future Hostel",
       price: "K83,000.00",
       status: "Available",
@@ -244,6 +263,7 @@ const HouseListData = [
 
     {
       imgPath: "assets/houses/house20.jpg",
+      roomPath: "assets/rooms/room(11).jpg",
       hostelName: "Bright Future Hostel",
       price: "K85,000.00",
       status: "Available",
@@ -256,6 +276,7 @@ const HouseListData = [
 
     {
       imgPath: "assets/houses/house21.jpg",
+      roomPath: "assets/rooms/room(10).jpg",
       hostelName: "Kambix Hostel",
       price: "K89,000.00",
       status: "Available",
@@ -268,6 +289,7 @@ const HouseListData = [
 
     {
       imgPath: "assets/houses/house22.jpg",
+      roomPath: "assets/rooms/room(9).jpg",
       hostelName: "Bright Future Hostel",
       price: "K92,000.00",
       status: "Available",
@@ -280,6 +302,7 @@ const HouseListData = [
 
     {
       imgPath: "assets/houses/house23.jpg",
+      roomPath: "assets/rooms/room(8).jpg",
       hostelName: "Iwalani Hostel",
       price: "K90,000.00",
       status: "Available",
@@ -292,6 +315,7 @@ const HouseListData = [
 
     {
       imgPath: "assets/houses/house24.jpg",
+      roomPath: "assets/rooms/room(7).jpg",
       hostelName: "Chimpeni Hostel",
       price: "K100,000.00",
       status: "Available",
@@ -304,6 +328,7 @@ const HouseListData = [
 
     {
       imgPath: "assets/houses/house25.jpg",
+      roomPath: "assets/rooms/room(6).jpg",
       hostelName: "Zudeh Hostel",
       price: "K99,000.00",
       status: "Available",
@@ -316,6 +341,7 @@ const HouseListData = [
 
     {
       imgPath: "assets/houses/house26.jpg",
+      roomPath: "assets/rooms/room(5).jpg",
       hostelName: "Kalipano Hostel",
       price: "K94,000.00",
       status: "Available",
@@ -328,6 +354,7 @@ const HouseListData = [
 
     {
       imgPath: "assets/houses/house27.jpg",
+      roomPath: "assets/rooms/room(4).jpg",
       hostelName: "Manderine Hostel",
       price: "K95,000.00",
       status: "Available",
@@ -340,6 +367,7 @@ const HouseListData = [
 
     {
       imgPath: "assets/houses/house28.jpg",
+      roomPath: "assets/rooms/room(3).jpg",
       hostelName: "Mwambo Hostel",
       price: "K87,000.00",
       status: "Available",
@@ -352,6 +380,7 @@ const HouseListData = [
 
     {
       imgPath: "assets/houses/house29.jpg",
+      roomPath: "assets/rooms/room(2).jpg",
       hostelName: "Chikowi Hostel",
       price: "K93,000.00",
       status: "Available",
@@ -364,6 +393,7 @@ const HouseListData = [
 
     {
       imgPath: "assets/houses/house30.jpg",
+      roomPath: "assets/rooms/room(1).jpg",
       hostelName: "ZeroWar Hostel",
       price: "K80,000.00",
       status: "Available",

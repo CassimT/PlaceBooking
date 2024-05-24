@@ -3,10 +3,10 @@ import { Outlet,Navigate } from 'react-router-dom';
 import SignIn from '../Authetication/SingIn';
 import LoginPage from '../../pages/LoginPage';
 
-function PrivateRouters() {
+function PrivateRouters({ authToken }) {
     const auth = {'token':true};
   return (
-    auth.token ? <Outlet/> : <LoginPage/>
+    auth ? <Outlet/> : <LoginPage/>
   )
 }
 
