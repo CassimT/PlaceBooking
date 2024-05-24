@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import MenuData from './MenuData';
 import { NavLink,Navigate,useNavigate } from 'react-router-dom';
-import SingIn from '../Authetication/SingIn';
+import SignIn from '../Authetication/SignIn';
 
 
 function Header() {

@@ -2,17 +2,15 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const SignIn = ({ setAuthToken }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Signing in with:', { email, password, rememberMe });
-    setAuthToken(true);
-    navigate('/MakePaymentPage');
+
   };
 
   return (
@@ -21,10 +19,7 @@ const SignIn = ({ setAuthToken }) => {
         <form onSubmit={handleSubmit} className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
           <h2 className="text-2xl mb-6 text-center font-bold text-gray-700">Sign In</h2>
           <div className="mb-4">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="email"
-            >
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
               Email
             </label>
             <input
@@ -37,10 +32,7 @@ const SignIn = ({ setAuthToken }) => {
             />
           </div>
           <div className="mb-6">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="password"
-            >
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
               Password
             </label>
             <input
@@ -68,7 +60,6 @@ const SignIn = ({ setAuthToken }) => {
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
               type="submit"
-              onClick={handleSubmit}
             >
               Sign In
             </button>

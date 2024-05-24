@@ -46,7 +46,7 @@ function RoomDetails() {
               return (
                 <>
                 <p>Near SDA Church</p>
-                <p> key = {index} {item.distance} from the school campus</p>
+                <p> {item.distance} from the school campus</p>
                 </>
               )
             })
