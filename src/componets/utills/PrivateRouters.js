@@ -4,9 +4,9 @@ import { Outlet,Navigate } from 'react-router-dom';
 import LoginPage from '../../pages/LoginPage';
 
 function PrivateRouters({ authToken }) {
-    const auth = {'token':true};
+    const auth = {'token':false};
   return (
-    auth ? <Outlet/> : <LoginPage/>
+    auth.token ? <Outlet/> : <LoginPage/>
   )
 }
 

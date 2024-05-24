@@ -19,24 +19,26 @@ function MainLayout() {
   location.pathname === '/SignupPage' ||
   location.pathname === '/ProfilePage'||
   location.pathname === '/MakePaymentPage'||
-  location.pathname === '/DetailsPage';
+  location.pathname === '/DetailsPage' || 
+  location.pathname === '/PaymentsPage'
+  ;
 
   return (
     <div className="App">
       {!isAuthPage && <SideBar />}
       <Routes>
         <Route element = {<PrivateRouters/>}>
-          <Route path="/MakePaymentPage" element={<MakePaymentPage />} />
+          <Route path="/PaymentsPage" element={<PaymentsPage />} />          
         </Route>
         <Route path="/" element={<HomePage />} />
-        <Route path="/BookingPage" element={<BookingPage />} />
-        <Route path="/PaymentsPage" element={<PaymentsPage />} />
+        <Route path="/BookingPage" element={<BookingPage />} />        
         <Route path="/ContactsPage" element={<ContactsPage />} />
         <Route path="/AboutPage" element={<AboutPage />} />
         <Route path="/SignupPage" element={<SignupPage />} />
         <Route path="/LoginPage" element={<LoginPage />} />
         <Route path="/DetailsPage" element={<DetailsPage />} />
         <Route path="/ProfilePage" element={<ProfilePage />} />
+        <Route path="/MakePaymentPage" element={<MakePaymentPage />} />
       </Routes>
     </div>
   );

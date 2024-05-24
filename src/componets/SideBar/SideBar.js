@@ -14,7 +14,7 @@ function SideBar() {
     <>
       <Header></Header>
       <nav className="w-1/5 h-screen fixed  bg-slate-500 top-0 z-10">
-      <img src="assets/logo1.png" alt="" className=" w-52 h-auto pl-10  pt-8 pb-4" />
+      <img src="assets/logo.png" alt="" className=" w-52 h-auto pl-10  pt-8 pb-4" />
       <hr className="border-t border-gray-600 mb-4" />
         <ul className="flex flex-col">
           {SideBarData.map((item, index) => (
