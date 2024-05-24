@@ -1,6 +1,6 @@
 import React from 'react';
 import BestOffer from './BestOffer';
-import BestOfferData from './BestOfferData';
+
 import imagePath from './house19.jpg'
 import HouseListData from '../../data/HouseListData';
 
@@ -26,7 +26,7 @@ function Dashboard() {
             <BestOffer
               key={index}
               imgPath={item.imgPath}
-              name={item.name}
+              hostelName={item.hostelName}
               price={item.price}
               location={item.location}
               place={item.place} 
