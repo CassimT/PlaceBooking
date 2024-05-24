@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Signup = () => {
   // State for form inputs and password validation
@@ -12,6 +12,11 @@ const Signup = () => {
   });
   const [passwordValid, setPasswordValid] = useState(false);
 
+  // Validate password on every input change
+  useEffect(() => {
+    validatePassword();
+  }, [formData.password, formData.reEnterPassword]);
+
   // Handle form input changes
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -19,7 +24,6 @@ const Signup = () => {
       ...formData,
       [name]: type === 'checkbox' ? checked : value
     });
-    validatePassword(); // Validate password on every input change
   };
 
   // Validate password
@@ -44,7 +48,7 @@ const Signup = () => {
       <h2 className="text-2xl font-bold mb-4">Sign Up</h2>
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
-          <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="firstName" className="block text-sm font-bold text-gray-700 mb-1">
             First Name
           </label>
           <input
@@ -59,7 +63,7 @@ const Signup = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="lastName" className="block text-sm font-bold text-gray-700 mb-1">
             Last Name
           </label>
           <input
@@ -74,7 +78,7 @@ const Signup = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="email" className="block text-sm font-bold text-gray-700 mb-1">
             Email
           </label>
           <input
@@ -89,7 +93,7 @@ const Signup = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="password" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="password" className="block text-sm font-bold text-gray-700 mb-1">
             Password
           </label>
           <input
@@ -104,7 +108,7 @@ const Signup = () => {
           />
         </div>
         <div className="mb-4">
-          <label htmlFor="reEnterPassword" className="block text-sm font-medium text-gray-700 mb-1">
+          <label htmlFor="reEnterPassword" className="block text-sm font-bold text-gray-700 mb-1">
             Re-enter Password
           </label>
           <input
@@ -133,9 +137,6 @@ const Signup = () => {
           </button>
         </div>
       </form>
-      <p className="text-gray-600 text-sm text-center mt-4">
-        <a href="" className="text-blue-500 hover:underline">Forgot Password?</a>
-      </p>
     </div>
   );
 };
