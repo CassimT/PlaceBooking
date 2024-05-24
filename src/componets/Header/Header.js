@@ -48,16 +48,7 @@ function Header() {
     {/**main div */}
     <div className=' w-screen h-20 bg-slate-100 shadow-md flex justify-end gap-36 py-6 items-center pr-10 ' >
       {/**the SeaachBar */}
-      <form action='' className=''>
-        <input type='text' 
-        placeholder='Search'
-        name='search'
-        aria-label='Search'
-        className=' w-80 px-3 py-2  placeholder-gray-500 text-black rounded-2xl border-non ring-2 ring-gray-300 focus:ring-gray-500 focus:ring-2'
-        >
-        </input>
-    
-      </form> 
+      
       {/**the Profile rapper */}
       <div className='flex justify-center items-center gap-5 z-10'>
         <NavLink to='/LoginPage'>
