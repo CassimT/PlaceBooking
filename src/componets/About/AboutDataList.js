@@ -31,7 +31,7 @@ const AboutDataList = [
     },
     {
         imgpath: "assets/avatas/avatar3.png",
-        name: " Edward Young Shaba",
+        name: " Edward Shaba",
         position: "Programmer"
     },
 ]
