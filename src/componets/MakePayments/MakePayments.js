@@ -1,6 +1,9 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 function MakePayments() {
+  const location = useLocation()
+  const {House} = location.state
   return ( 
   <div className="w-1/2 flex justify-center gap-20 fixed left-1/2 -translate-x-1/2  bg-white p-6 border border-gray-300  rounded-md shadow-2xl">
       <div className="flex justify-between gap-10">
@@ -30,7 +33,7 @@ function MakePayments() {
       </div>
       <div className="flex flex-col">
         <h1 className="text-xl font-bold">Booking summary</h1>
-        <img src="assets/houses/house3.jpg" alt="Hazel" className=" rounded-md h-44"></img>
+        <img src={House.imgPath} alt="Hazel" className=" rounded-md h-44"></img>
         <div className="flex gap-5 ">
        
           <div className="p-4 bg-transparent flex flex-col justify-start items-start rounded-md">
@@ -40,10 +43,10 @@ function MakePayments() {
             <span>Total</span>
           </div>
           <div className="p-4 bg-transparent flex flex-col justify-start items-start rounded-md ">
-            <span>K15000.00</span> 
+            <span>K{House.price}</span> 
             <span>K50.00</span>
             <span>K0.00</span>
-            <span>K15050.00</span>
+            <span>{`K${(parseFloat(House.price) - 50.00).toFixed(2)}`}</span>
             <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md">Make Payment</button>
           </div>
         </div>

@@ -19,7 +19,8 @@ function BestOffer(props) {
               <p className="text-sm">{props.location}</p>
               <p className="text-sm">{props.place}</p>
             </div>
-            <NavLink to= "/MakePaymentPage"><button className="mt-4 bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700">
+            <NavLink to= "/MakePaymentPage">
+              <button className="mt-4 bg-blue-600 text-white py-2 w-full rounded-lg hover:bg-blue-700">
               Book Now
             </button></NavLink>
           </div>
