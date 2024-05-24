@@ -52,7 +52,7 @@ function Header() {
       {/**the Profile rapper */}
       <div className='flex justify-center items-center gap-5 z-10'>
         <NavLink to='/LoginPage'>
-          <span className='relative pr-0 cursor-pointer' >SingIn</span>
+          <span className='relative pr-0 cursor-pointer' >SignIn</span>
         </NavLink>
       <img 
         ref={imgRef}
